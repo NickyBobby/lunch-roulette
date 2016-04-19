@@ -31,15 +31,24 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'figaro'
-
+gem 'omniauth'
 gem 'omniauth-slack', github: 'kmrshntr/omniauth-slack'
 gem 'rails_12factor', group: :production
+gem 'slack-ruby-bot'
+gem 'faraday'
 
 group :development, :test do
-  gem 'pry'
+  gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'simplecov', require: false
+  gem 'webmock'
+  gem 'capybara'
+  gem 'vcr'
 end
