@@ -4,6 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = SlackUser.new(current_user)
+    @user = current_user
   end
 end

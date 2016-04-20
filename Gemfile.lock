@@ -238,6 +238,9 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    time_for_a_boolean (0.1.0)
+      activerecord
+      railties
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -270,6 +273,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  launchy
   omniauth
   omniauth-slack!
   pg (~> 0.15)
@@ -281,6 +285,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   simplecov
   slack-ruby-bot
+  time_for_a_boolean
   uglifier (>= 1.3.0)
   vcr
   web-console (~> 2.0)
