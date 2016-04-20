@@ -11,20 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420000346) do
+ActiveRecord::Schema.define(version: 20160420165742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.boolean  "vegetarian"
-    t.boolean  "vegan"
-    t.boolean  "gluten_free"
     t.string   "favorite_food"
+    t.datetime "vegetarian_at"
+    t.datetime "vegan_at"
+    t.datetime "gluten_free_at"
+    t.string   "image_url"
+    t.datetime "admin_at"
+    t.string   "uid"
+    t.string   "username"
   end
 
 end

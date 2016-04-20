@@ -3,12 +3,14 @@ SimpleCov.start('rails')
 
 def stub_omniauth
   OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+  OmniAuth.config.mock_auth[:slack] = OmniAuth::AuthHash.new({
     provider: 'slack',
     uid: '12345',
     info: {
       name: 'Nicholas Dorans',
-      nickname: 'nickynonaps'
+      nickname: 'nickynonaps',
+      first_name: 'Nicholas',
+      last_name:  'Dorans'
     },
     credentials: {
       token: ENV['SLACK_CLIENT_ID']

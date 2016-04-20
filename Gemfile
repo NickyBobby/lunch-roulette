@@ -36,10 +36,13 @@ gem 'omniauth-slack', github: 'kmrshntr/omniauth-slack'
 gem 'rails_12factor', group: :production
 gem 'slack-ruby-bot'
 gem 'faraday'
+gem 'time_for_a_boolean'
 
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
+  gem 'launchy'
+  gem 'capybara'
 end
 
 group :development do
