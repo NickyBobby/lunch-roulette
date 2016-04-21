@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
       user.image_url  = user_info[:image_24]
       user.admin_at   = user_info[:is_admin]
       user.username   = user_info[:nickname]
+      user.token      = auth[:credentials][:token]
     end
   end
 end

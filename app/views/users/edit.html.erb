@@ -1,15 +1,15 @@
-<%= form_for @user, url: user_path, method: post do |f| %>
+<%= form_for @user, url: user_path do |f| %>
   <h4><%= f.label :first_name %></h4>
   <h4><%= f.text_field :first_name, value: @user.first_name %></h4>
   <h4><%= f.label :last_name %></h4>
   <h4><%= f.text_field :last_name, value: @user.last_name %></h4>
-  <h4><%= f.radio_button :vegetarian, value: @user.vegetarian, true %></h4>
+  <h4><%= f.check_box :vegetarian %></h4>
   <h4><%= f.label :vegetarian %></h4>
-  <h4><%= f.radio_button :vegan, value: @user.vegan, true %></h4>
+  <h4><%= f.check_box :vegan %></h4>
   <h4><%= f.label :vegan %></h4>
-  <h4><%= f.radio_button :gluten_free, value: @user.gluten_free, true %></h4>
+  <h4><%= f.check_box :gluten_free %></h4>
   <h4><%= f.label :gluten_free %></h4>
   <h4><%= f.label :favorite_food %></h4>
   <h4><%= f.text_field :favorite_food, value: @user.favorite_food %></h4>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Update Info" %>
 <% end %>
