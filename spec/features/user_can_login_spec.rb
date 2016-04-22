@@ -12,7 +12,15 @@ RSpec.feature "user can log in" do
         expect(page).to have_content("Vegetarian: false")
         expect(page).to have_content("Vegan: false")
         expect(page).to have_content("Gluten Free: false")
-
+        click_on "Update Info"
+        check "Vegetarian"
+        check "Vegan"
+        click_on "Update Info"
+        expect(page).to have_content("Vegetarian: true")
+        expect(page).to have_content("Vegan: true")
+        expect(page).to have_content("Gluten Free: false")
+        click_on "Logout"
+        expect(page).to have_content("Sign in with Slack")
       end
     end
   end

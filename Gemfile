@@ -25,6 +25,7 @@ gem 'rails_12factor', group: :production
 gem 'slack-ruby-bot'
 gem 'faraday'
 gem 'time_for_a_boolean'
+gem 'responders', '~> 2.0'
 
 group :development, :test do
   gem 'pry-rails'
