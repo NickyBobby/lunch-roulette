@@ -11,12 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422044345) do
+ActiveRecord::Schema.define(version: 20160423010452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lunch_roulette_groups", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,9 +33,12 @@ ActiveRecord::Schema.define(version: 20160422044345) do
     t.string   "image"
     t.string   "email"
     t.boolean  "admin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_group_id"
   end
+
+  add_index "slack_users", ["user_group_id"], name: "index_slack_users_on_user_group_id", using: :btree
 
   create_table "user_groups", force: :cascade do |t|
     t.string   "team_id"
@@ -57,4 +65,5 @@ ActiveRecord::Schema.define(version: 20160422044345) do
     t.datetime "gluten_free_at"
   end
 
+  add_foreign_key "slack_users", "user_groups"
 end

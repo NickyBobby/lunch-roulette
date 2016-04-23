@@ -1,7 +1,5 @@
 class UserGroupsController < ApplicationController
-
   def index
-    # service = SlackService.new(current_user)
     user_groups = service.get_user_groups
     create_user_groups(user_groups)
     @user_groups = UserGroup.all
