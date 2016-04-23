@@ -11,10 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421005648) do
+ActiveRecord::Schema.define(version: 20160423010452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lunch_roulette_groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "slack_users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "name"
+    t.string   "slack_id"
+    t.string   "image"
+    t.string   "email"
+    t.boolean  "admin"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_group_id"
+  end
+
+  add_index "slack_users", ["user_group_id"], name: "index_slack_users_on_user_group_id", using: :btree
+
+  create_table "user_groups", force: :cascade do |t|
+    t.string   "team_id"
+    t.string   "name"
+    t.integer  "user_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "user_group"
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",     null: false
@@ -32,4 +65,5 @@ ActiveRecord::Schema.define(version: 20160421005648) do
     t.datetime "gluten_free_at"
   end
 
+  add_foreign_key "slack_users", "user_groups"
 end

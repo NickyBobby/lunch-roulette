@@ -1,0 +1,11 @@
+<h1><%= @user_group.name %></h1>
+<h2>Slack Users</h2>
+<%= link_to "Back To User Groups", user_groups_path %>
+
+
+<% @slack_users.each do |slack_user| %>
+  <h4>Username: <%= slack_user.username %></h4>
+  <h4>Name: <%= slack_user.name %></h4>
+  <h4>Email: <%= slack_user.email %></h4>
+  <h4>Put something else here</h4>
+<% end %>
