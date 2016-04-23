@@ -6,6 +6,13 @@ class SlackUsersController < ApplicationController
     @slack_users = @user_group.slack_users
   end
 
+  def destroy
+    binding.pry
+    slack_user = SlackUser.find(params[:id])
+    slack_user.destroy
+    redirect_to slack_users_path
+  end
+
   private
 
     def service

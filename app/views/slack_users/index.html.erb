@@ -7,5 +7,5 @@
   <h4>Username: <%= slack_user.username %></h4>
   <h4>Name: <%= slack_user.name %></h4>
   <h4>Email: <%= slack_user.email %></h4>
-  <h4>Put something else here</h4>
+  <h4><%= link_to "Delete Slack User", delete_slack_user_path %></h4>
 <% end %>
