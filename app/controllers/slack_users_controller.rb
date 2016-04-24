@@ -1,9 +1,16 @@
 class SlackUsersController < ApplicationController
   def index
-    @user_group = UserGroup.find(params[:user_group])
+    @user_group = UserGroup.find(params[:format])
     slack_users = service.get_slack_users(@user_group)
     create_slack_users(slack_users)
     @slack_users = @user_group.slack_users
+  end
+
+  def destroy
+    slack_user = SlackUser.find(params[:id])
+    slack_user.update_attribute(:active, false)
+    flash.now[:success] = "You have removed #{slack_user.name} from lunch roulette."
+    redirect_to slack_users_path(slack_user.user_group_id)
   end
 
   private

@@ -1,7 +1,3 @@
-
-<% @slack_users.each_slice(4) do |slice| %>
-  <%  %>
-  <% slice.each do |user| %>
-
-  <% end %>
+<% @lunch_roulette.each do |group| %>
+  <h3><%= group.join(", ") %></h3><br>
 <% end %>
