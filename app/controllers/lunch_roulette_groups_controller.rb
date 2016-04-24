@@ -1,19 +1,24 @@
 class LunchRouletteGroupsController < ApplicationController
   def index
-    @slack_users = SlackUser.all
     @lunch_roulette = generate_lunch_roulette_groups(@slack_users)
-    binding.pry
   end
 
   private
 
-    def generate_lunch_roulette_groups(slack_users)
-      users = slack_users.order('RANDOM()')
-      lr_groups = []
-      users.each_slice(4) do |group|
-        
-        lr_groups << LunchRouletteGroup.get_random_group(group)
+    def generate_lunch_roulette_groups(lr_group)
+      staff = SlackUser.is_admin.to_a
+      students = SlackUser.is_student.to_a
+      total_count = staff.count + students.count
+      groups_size = (total_count/4.0).ceil
+      groups = []
+      groups_size.times do
+        if staff.count > 0
+          groups << LunchRouletteGroup.get_names([staff.shift, students.shift, students.shift, students.shift])
+        else
+          groups << LunchRouletteGroup.get_names(students.shift(4))
+        end
       end
-      lr_groups
+      groups
     end
+
 end

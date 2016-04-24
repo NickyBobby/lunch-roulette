@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423010452) do
+ActiveRecord::Schema.define(version: 20160423213609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +33,10 @@ ActiveRecord::Schema.define(version: 20160423010452) do
     t.string   "image"
     t.string   "email"
     t.boolean  "admin"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "user_group_id"
+    t.boolean  "active",        default: true
   end
 
   add_index "slack_users", ["user_group_id"], name: "index_slack_users_on_user_group_id", using: :btree
