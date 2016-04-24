@@ -1,11 +1,15 @@
 class LunchRouletteGroupsController < ApplicationController
+  respond_to :json
+
   def index
-    @lunch_roulette = generate_lunch_roulette_groups(@slack_users)
+    @lunch_roulette = generate_lunch_roulette_groups
+    # binding.pry
+    render json: @lunch_roulette
   end
 
   private
 
-    def generate_lunch_roulette_groups(lr_group)
+    def generate_lunch_roulette_groups
       staff = SlackUser.is_admin.to_a
       students = SlackUser.is_student.to_a
       total_count = staff.count + students.count
@@ -13,12 +17,14 @@ class LunchRouletteGroupsController < ApplicationController
       groups = []
       groups_size.times do
         if staff.count > 0
-          groups << LunchRouletteGroup.get_names([staff.shift, students.shift, students.shift, students.shift])
+          names = LunchRouletteGroup.get_names([staff.shift, students.shift, students.shift, students.shift]).join(", ") + "\n"
+          groups << names
         else
-          groups << LunchRouletteGroup.get_names(students.shift(4))
+          names = LunchRouletteGroup.get_names(students.shift(4)).join(", ") + "\n"
+          groups << names
         end
       end
-      groups
+      {text: groups.join}
     end
 
 end
