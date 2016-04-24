@@ -1,5 +1,5 @@
 class LunchRouletteGroupsController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
 
   def index
     @lunch_roulette = generate_lunch_roulette_groups
