@@ -8,7 +8,7 @@
       <h4>Username: <%= slack_user.username %></h4>
       <h4>Name: <%= slack_user.name %></h4>
       <h4>Email: <%= slack_user.email %></h4>
-      <h4><%= link_to "Delete Slack User", slack_user_path(slack_user), method: :delete %></h4>
+      <h4><%= link_to "Remove User From Lunch Roulette", slack_user_path(slack_user), method: :delete %></h4><br>
     <% end %>
   <% end %>
 <% end %>

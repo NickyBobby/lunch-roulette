@@ -2,8 +2,8 @@
 <%= link_to "Back To User Profile", user_path(current_user) %>
 <% cache do %>
   <% @user_groups.each do |user_group| %>
-    <h4><%= user_group.name %></h4>
-    <h4><%= user_group.user_count %></h4>
-    <%= link_to "Slack Users From This Group", slack_users_path(user_group) %>
+    <h4>Group Name: <%= user_group.name %></h4>
+    <h4>This group has <%= user_group.user_count %> users in it.</h4>
+    <%= link_to "Slack Users From This Group", slack_users_path(user_group) %><br>
   <% end %>
 <% end %>
