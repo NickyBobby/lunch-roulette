@@ -3,7 +3,6 @@ class LunchRouletteGroupsController < ApplicationController
 
   def index
     @lunch_roulette = generate_lunch_roulette_groups
-    # binding.pry
     render json: @lunch_roulette
   end
 
