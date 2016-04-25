@@ -26,6 +26,7 @@ gem 'slack-ruby-bot'
 gem 'faraday'
 gem 'time_for_a_boolean'
 gem 'responders', '~> 2.0'
+gem 'yelp', require: 'yelp'
 
 group :development, :test do
   gem 'pry-rails'
