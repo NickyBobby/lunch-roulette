@@ -16,12 +16,25 @@ class LunchRouletteGroupsController < ApplicationController
       groups = []
       groups_size.times do
         if staff.count > 0
-          groups << "* " + LunchRouletteGroup.get_names([staff.shift, students.shift, students.shift, students.shift]).join(", ") + "\n"
+          groups << [staff.shift, students.shift, students.shift, students.shift]
+        elsif students.count == 2
+          groups << [students.shift, students.shift, groups[-1].shift]
+        elsif students.count == 1
+          groups << [students.shift, groups[-1].shift, groups[-2].shift]
         else
-          groups << "* " + LunchRouletteGroup.get_names(students.shift(4)).join(", ") + "\n"
+          groups << students.shift(4)
         end
       end
-      {text: groups.join}
+      name_groups = get_name_groups(groups)
+      {text: name_groups.join}
+    end
+
+    def get_name_groups(groups)
+      collection = []
+      groups.each do |group|
+        collection << "* " + LunchRouletteGroup.get_names(group).join(", ") + "\n"
+      end
+      collection
     end
 
 end
