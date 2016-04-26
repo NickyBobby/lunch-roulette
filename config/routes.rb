@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :lunch_roulette_groups, only: [:index]
+    end
+  end
+  
   root   'home#index'
   get    '/auth/slack',              as: :slack_login
   get    'auth/slack/callback',      to: 'sessions#create'

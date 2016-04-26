@@ -1,4 +1,4 @@
-class LunchRouletteGroupsController < ApplicationController
+class Api::V1::LunchRouletteGroupsController < Api::V1::BaseController
   respond_to :json, :html
 
   def index
