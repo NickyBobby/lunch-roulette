@@ -27,6 +27,8 @@ gem 'faraday'
 gem 'time_for_a_boolean'
 gem 'responders', '~> 2.0'
 gem 'yelp', require: 'yelp'
+gem 'database_cleaner'
+
 
 group :development, :test do
   gem 'pry-rails'
@@ -44,4 +46,5 @@ group :test do
   gem 'simplecov', require: false
   gem 'webmock'
   gem 'vcr'
+  gem 'mocha'
 end

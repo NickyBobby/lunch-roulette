@@ -1,0 +1,745 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://slack.com/api/usergroups.list?pretty=1&token=xoxp-2329094327-13425089316-36463681056-1dd5ce3d46
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - referrer no-referrer;
+      Date:
+      - Tue, 26 Apr 2016 21:03:57 GMT
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - Accept-Encoding
+      X-Accepted-Oauth-Scopes:
+      - usergroups:read
+      X-Content-Type-Options:
+      - nosniff
+      X-Oauth-Scopes:
+      - identify,team:read,users:read,usergroups:read,im:write,reactions:write
+      X-Xss-Protection:
+      - '0'
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 01448657fc099ab201797422a6a02be2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - pnXEcaiH9KRcVmIo8kjGCpaq4h4bLVscsS6zB3RMMUoBOV8PsBCXlQ==
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+            "ok": true,
+            "usergroups": [
+                {
+                    "id": "S0KHTPHNE",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1511 Students",
+                    "description": "User group to keep track of students in 1511 cohort",
+                    "handle": "1511-students",
+                    "is_external": false,
+                    "date_create": 1453921182,
+                    "date_update": 1453921182,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 21
+                },
+                {
+                    "id": "S0KJW9WUX",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Staff",
+                    "description": "List of Turing staff members",
+                    "handle": "turing-staff",
+                    "is_external": false,
+                    "date_create": 1453946950,
+                    "date_update": 1453946950,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 19
+                },
+                {
+                    "id": "S0KM1RX42",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1510 Students",
+                    "description": "List of students in 1510 cohort",
+                    "handle": "1510-students",
+                    "is_external": false,
+                    "date_create": 1454006103,
+                    "date_update": 1454006103,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 24
+                },
+                {
+                    "id": "S0KM2B6GK",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1507 Students",
+                    "description": "Students in 1507 cohort",
+                    "handle": "1507-students",
+                    "is_external": false,
+                    "date_create": 1454008020,
+                    "date_update": 1454008020,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 1
+                },
+                {
+                    "id": "S0KMNJPBK",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Test Group",
+                    "description": "for testing",
+                    "handle": "test-group",
+                    "is_external": false,
+                    "date_create": 1454018655,
+                    "date_update": 1454018655,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 4
+                },
+                {
+                    "id": "S0L2ZJWP9",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1602 Students",
+                    "description": "Students in 1602 cohort",
+                    "handle": "1602-students",
+                    "is_external": false,
+                    "date_create": 1454424557,
+                    "date_update": 1454424557,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+                            "C0H2DV3B2"
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 24
+                },
+                {
+                    "id": "S0L3Z9XD2",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Golick Posse Roster",
+                    "description": "",
+                    "handle": "golick-roster",
+                    "is_external": false,
+                    "date_create": 1454445485,
+                    "date_update": 1454445485,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 6
+                },
+                {
+                    "id": "S0L3ZMU76",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Matsumoto Posse Roster",
+                    "description": "",
+                    "handle": "matsumoto-roster",
+                    "is_external": false,
+                    "date_create": 1454445715,
+                    "date_update": 1454445715,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 5
+                },
+                {
+                    "id": "S0L3ZTF4K",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1602-echo",
+                    "description": "Echo",
+                    "handle": "1602-e",
+                    "is_external": false,
+                    "date_create": 1454444007,
+                    "date_update": 1454444007,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02Q25H6V",
+                    "updated_by": "U02Q25H6V",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 9
+                },
+                {
+                    "id": "S0L41CT45",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Brooks Posse Roster",
+                    "description": "",
+                    "handle": "brooks-roster",
+                    "is_external": false,
+                    "date_create": 1454445323,
+                    "date_update": 1454445323,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 8
+                },
+                {
+                    "id": "S0L424WCB",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Berners-Lee Posse Roster",
+                    "description": "",
+                    "handle": "berners-lee-roster",
+                    "is_external": false,
+                    "date_create": 1454445283,
+                    "date_update": 1454445283,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 9
+                },
+                {
+                    "id": "S0L42AW59",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Lovelace Posse Roster",
+                    "description": "",
+                    "handle": "lovelace-roster",
+                    "is_external": false,
+                    "date_create": 1454445394,
+                    "date_update": 1454445394,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 7
+                },
+                {
+                    "id": "S0L44DA2D",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Kay Posse Roster",
+                    "description": "",
+                    "handle": "kay-roster",
+                    "is_external": false,
+                    "date_create": 1454445194,
+                    "date_update": 1454445262,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 8
+                },
+                {
+                    "id": "S0L450R25",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Weirich Posse Roster",
+                    "description": "",
+                    "handle": "weirich-roster",
+                    "is_external": false,
+                    "date_create": 1454445517,
+                    "date_update": 1454445517,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 9
+                },
+                {
+                    "id": "S0L45NQNB",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Zygmuntowicz Posse Roster",
+                    "description": "",
+                    "handle": "zygmuntowicz-roster",
+                    "is_external": false,
+                    "date_create": 1454445664,
+                    "date_update": 1454445664,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 7
+                },
+                {
+                    "id": "S0L45Q3R8",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Goldberg Posse Roster",
+                    "description": "",
+                    "handle": "goldberg-roster",
+                    "is_external": false,
+                    "date_create": 1454445567,
+                    "date_update": 1454445567,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 8
+                },
+                {
+                    "id": "S0L465YBG",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Ritchie Posse Roster",
+                    "description": "",
+                    "handle": "ritchie-roster",
+                    "is_external": false,
+                    "date_create": 1454445611,
+                    "date_update": 1454445611,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 7
+                },
+                {
+                    "id": "S0L467Z9N",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Knuth Posse Roster",
+                    "description": "",
+                    "handle": "knuth-roster",
+                    "is_external": false,
+                    "date_create": 1454445360,
+                    "date_update": 1454445360,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 7
+                },
+                {
+                    "id": "S0L46CDQQ",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Hopper Posse Roster",
+                    "description": "",
+                    "handle": "hopper-roster",
+                    "is_external": false,
+                    "date_create": 1454445438,
+                    "date_update": 1454445438,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02MYKGQB",
+                    "updated_by": "U02MYKGQB",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 7
+                },
+                {
+                    "id": "S0L47NLNL",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1602-foxtrot",
+                    "description": "1602 foxtrot",
+                    "handle": "1602-f",
+                    "is_external": false,
+                    "date_create": 1454446222,
+                    "date_update": 1454446222,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02Q25H6V",
+                    "updated_by": "U02Q25H6V",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 17
+                },
+                {
+                    "id": "S0LBD530B",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "Module Anchors",
+                    "description": "Module Anchors",
+                    "handle": "anchors",
+                    "is_external": false,
+                    "date_create": 1454641024,
+                    "date_update": 1454641024,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02GA9USU",
+                    "updated_by": "U02GA9USU",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+                            "G0C8VRYSK"
+                        ]
+                    },
+                    "user_count": 4
+                },
+                {
+                    "id": "S0LMWCBEE",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1508-students",
+                    "description": "1508 Students",
+                    "handle": "1508-students",
+                    "is_external": false,
+                    "date_create": 1455036727,
+                    "date_update": 1455036727,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02Q25H6V",
+                    "updated_by": "U02Q25H6V",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 18
+                },
+                {
+                    "id": "S0MLZV25B",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1603 students",
+                    "description": "",
+                    "handle": "1603-students",
+                    "is_external": false,
+                    "date_create": 1455684167,
+                    "date_update": 1455684167,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02Q25H6V",
+                    "updated_by": "U02Q25H6V",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 23
+                },
+                {
+                    "id": "S0U7ZCJHZ",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1603-foxtrot",
+                    "description": "",
+                    "handle": "1603-f",
+                    "is_external": false,
+                    "date_create": 1458581374,
+                    "date_update": 1458581374,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02Q25H6V",
+                    "updated_by": "U02Q25H6V",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 17
+                },
+                {
+                    "id": "S0U97AAG6",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1603-echo",
+                    "description": "1603 Echo",
+                    "handle": "1603-e",
+                    "is_external": false,
+                    "date_create": 1458581288,
+                    "date_update": 1458597082,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02Q25H6V",
+                    "updated_by": "U02Q25H6V",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 7
+                },
+                {
+                    "id": "S0V47V2HG",
+                    "team_id": "T029P2S9M",
+                    "is_usergroup": true,
+                    "is_subteam": true,
+                    "name": "1605-students",
+                    "description": "",
+                    "handle": "1605-students",
+                    "is_external": false,
+                    "date_create": 1458786377,
+                    "date_update": 1458786377,
+                    "date_delete": 0,
+                    "auto_type": null,
+                    "created_by": "U02Q25H6V",
+                    "updated_by": "U02Q25H6V",
+                    "deleted_by": null,
+                    "prefs": {
+                        "channels": [
+
+                        ],
+                        "groups": [
+
+                        ]
+                    },
+                    "user_count": 7
+                }
+            ]
+        }
+    http_version: 
+  recorded_at: Tue, 26 Apr 2016 21:03:56 GMT
+recorded_with: VCR 3.0.1
