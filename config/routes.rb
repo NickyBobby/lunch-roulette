@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :user_groups, only: [:index, :show]
   resources :slack_users, only: [:index, :destroy]
   resources :restaurant_recommendations, only: [:index]
+  post   'food_preferences',         to: 'food_preferences#update'
   get    '/lunch_roulette_groups',   to: 'lunch_roulette_groups#index', as: 'lunch_roulette_groups', formats: {default: :json}
   get    '/:username',               to: 'users#show',                  as: 'user'
   get    '/:username/edit',          to: 'users#edit',                  as: 'edit_user'
