@@ -3,9 +3,9 @@ class FoodPreferencesController < ApplicationController
   def update
     @slack_user = SlackUser.find_by(slack_id: params[:user_id])
     if params[:text].include?('#add')
-      render json: {text: "#{add_food} was added to your preferences ;)"}
+      render json: {text: "#{add_food} was added to your food preferences ;)"}
     elsif params[:text].include?('#delete')
-      render json: {text: "#{delete_food} was deleted from your preferences ;)"}
+      render json: {text: "#{delete_food} was deleted from your food preferences :("}
     elsif params[:text].include?('#list')
       render json: {text: "Your food preferences are #{foods}"}
     else
@@ -16,17 +16,19 @@ class FoodPreferencesController < ApplicationController
   private
 
     def add_food
-      food = params[:text].split(" ")[1]
       @slack_user.food_preferences["#{food}"] = true
       @slack_user.save
       food
     end
 
     def delete_food
-      food = params[:text].split(" ")[1]
       @slack_user.food_preferences.delete("#{food}")
       @slack_user.save
       food
+    end
+
+    def food
+      params[:text].split(" ")[1]
     end
 
     def foods
