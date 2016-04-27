@@ -1,12 +1,6 @@
-<h1><%= @user.first_name %> <%= @user.last_name %>'s Food Profile</h1>
+<h1><%= @user.first_name %> <%= @user.last_name %> Admin Dashboard</h1>
 
 <h3>Slack username: <%= @user.username %></h3>
 
-<h5>Vegetarian:         <%= @user.vegetarian %></h5>
-<h5>Vegan:              <%= @user.vegan %></h5>
-<h5>Gluten Free:        <%= @user.gluten_free %></h5>
-<h5>Favorite Food Type: <%= @user.favorite_food %></h5>
-
-<%= link_to "Update Info", edit_user_path %>
-
-<%= link_to "Get User Groups", user_groups_path %>
+<a href="/user_groups" class="btn btn-primary">See All User Groups</a><br><br>
+<a href="/slack_users" class="btn btn-primary">See All Lunch Rouletters</a>
