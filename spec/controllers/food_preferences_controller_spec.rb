@@ -32,4 +32,15 @@ RSpec.describe Api::V1::FoodPreferencesController, type: :controller do
     expect(response.status).to eq 200
     expect(response.body).to have_content "Your food preferences are stuff and things"
   end
+
+  it "user can see help for using the slash command" do
+    user = SlackUser.create(name: "Nick",
+                     slack_id: "BHGS98HKN",
+                     food_preferences: {"stuff" => true, "things" => true})
+
+    post :update, {user_id: "BHGS98HKN", text: ""}
+
+    expect(response.status).to eq 200
+    expect(response.body).to have_content "Possible commands when using the /food-prefs slash command"
+  end
 end
