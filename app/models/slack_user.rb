@@ -9,7 +9,7 @@ class SlackUser < ActiveRecord::Base
       user.username = slackuser[:name]
       user.name     = slackuser[:real_name]
       user.slack_id = slackuser[:id]
-      user.image    = slackuser[:profile][:image_24]
+      user.image    = slackuser[:profile][:image_72]
       user.email    = slackuser[:profile][:email]
       user.admin    = slackuser[:is_admin]
     end

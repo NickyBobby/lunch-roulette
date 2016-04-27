@@ -1,9 +1,19 @@
-<h1>User Groups</h1>
-<%= link_to "Back To User Profile", user_path(current_user) %>
+<h1>User Groups</h1><br>
+<a href="/<%= current_user.id %>", class="btn btn-primary">Back To User Profile</a><br><br>
+
+
 <% cache do %>
-  <% @user_groups.each do |user_group| %>
-    <h4>Group Name: <%= user_group.name %></h4>
-    <h4>This group has <%= user_group.user_count %> users in it.</h4>
-    <%= link_to "Slack Users From This Group", user_group_path(user_group) %><br>
-  <% end %>
+  <div class="row">
+    <% @user_groups.each do |user_group| %>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title text-center"><%= user_group.name %></h4>
+            <p class="card-text">This group has <%= user_group.user_count %> users in it.</p>
+            <a href="/user_groups/<%= user_group.id %>" class="btn btn-primary center-block">Slack Users From This Group</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>

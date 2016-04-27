@@ -29,7 +29,7 @@ gem 'responders', '~> 2.0'
 gem 'yelp', require: 'yelp'
 gem 'database_cleaner'
 gem 'faker'
-
+gem 'bootstrap-sass', '~> 3.3.6'
 
 
 group :development, :test do

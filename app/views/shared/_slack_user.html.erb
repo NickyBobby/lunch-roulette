@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="col-md-2">
+    <img class="card-img-top center-block img-responsive" src="<%= slack_user.image %>" alt="slack user image">
+      <div class="card-block">
+        <h5 class="card-title text-center"><%= slack_user.name %></h5>
+        <p class="card-text text-center">@<%= slack_user.username %></p>
+        <% if slack_user.active %>
+          <a href="/slack_users/remove/<%= slack_user.id %>", class="btn btn-danger center-block custo-bottom">Remove</a>
+        <% else %>
+          <a href="/slack_users/add/<%= slack_user.id %>" class="btn btn-success center-block custo-bottom">Add</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
