@@ -28,6 +28,8 @@ gem 'time_for_a_boolean'
 gem 'responders', '~> 2.0'
 gem 'yelp', require: 'yelp'
 gem 'database_cleaner'
+gem 'faker'
+
 
 
 group :development, :test do
@@ -35,7 +37,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'launchy'
   gem 'capybara'
-  gem 'faker'
 end
 
 group :development do

@@ -14,7 +14,7 @@ RSpec.describe Api::V1::LunchRouletteGroupsController, type: :controller do
     expect(response.status).to eq 200
   end
 
-  it "returns list of lunch roulette groups / hits different conditional" do
+  it "returns list of lunch roulette groups / hits different conditionald" do
     10.times do |n|
       SlackUser.create(name: "Teacher #{n}", admin: true)
     end
