@@ -1,4 +1,6 @@
 class Api::V1::RestaurantRecommendationsController < Api::V1::BaseController
+  include YelpHelper
+  
   def index
     user_preferences = get_user_preferences(params)
     @restaurants = service.get_restaurant_recommendations(user_preferences)

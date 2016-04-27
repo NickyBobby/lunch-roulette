@@ -1,4 +1,6 @@
 class Api::V1::LunchRouletteGroupsController < Api::V1::BaseController
+  include LunchGroupHelper
+
   respond_to :json, :html
 
   def index
@@ -32,7 +34,7 @@ class Api::V1::LunchRouletteGroupsController < Api::V1::BaseController
     def get_name_groups(groups)
       collection = []
       groups.each do |group|
-        collection << "* " + LunchRouletteGroup.get_names(group).join(", ") + "\n"
+        collection << "* " + get_names(group).join(", ") + "\n"
       end
       collection
     end
