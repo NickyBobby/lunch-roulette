@@ -29,15 +29,29 @@ class SlackUser < ActiveRecord::Base
     prefs.join(",")
   end
 
+  def get_response(params)
+    if params[:text].include?('#add')
+      food = self.add_food(params)
+      {text: "#{food} was added to your food preferences ;)"}
+    elsif params[:text].include?('#delete')
+      food = self.delete_food(params)
+      {text: "#{food} was deleted from your food preferences :("}
+    elsif params[:text].include?('#list')
+      {text: "Your food preferences are #{self.foods}"}
+    else
+      {text: self.help}
+    end
+  end
+
   def add_food(params)
-    food = get_food(params)
+    food = self.get_food(params)
     self.food_preferences["#{food}"] = true
     self.save
     food
   end
 
   def delete_food(params)
-    food = get_food(params)
+    food = self.get_food(params)
     self.food_preferences.delete("#{food}")
     self.save
     food
@@ -51,5 +65,12 @@ class SlackUser < ActiveRecord::Base
     self.food_preferences.keys.join(" and ")
   end
 
+  def help
+    "Possible commands when using the /food-prefs slash command\n
+    /food-prefs #add [food_name]     | will add food or dietary restriction to your preferences \n
+    /food-prefs #delete [food_name]  | will remove food from your preferences \n
+    /food-prefs #list                | will return list of your food preferences \n
+    '#add' and '#delete' commands will only accept the first word after it"
+  end
 
 end
