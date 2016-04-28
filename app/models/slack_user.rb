@@ -14,4 +14,42 @@ class SlackUser < ActiveRecord::Base
       user.admin    = slackuser[:is_admin]
     end
   end
+
+  def self.get_user_preferences(info)
+    prefs = []
+    prefs << SlackUser.find_by(slack_id: info[:user_id]).food_preferences.keys.join(",")
+    if !info[:text].empty?
+      users = info[:text].split(" ")
+      users.each do |user|
+        if slackuser = SlackUser.find_by(username: user.gsub('@',''))
+          prefs << slackuser.food_preferences.keys.join(",")
+        end
+      end
+    end
+    prefs.join(",")
+  end
+
+  def add_food(params)
+    food = get_food(params)
+    self.food_preferences["#{food}"] = true
+    self.save
+    food
+  end
+
+  def delete_food(params)
+    food = get_food(params)
+    self.food_preferences.delete("#{food}")
+    self.save
+    food
+  end
+
+  def get_food(params)
+    params[:text].split(" ")[1]
+  end
+
+  def foods
+    self.food_preferences.keys.join(" and ")
+  end
+
+
 end
