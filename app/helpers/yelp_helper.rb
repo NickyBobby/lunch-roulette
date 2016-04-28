@@ -5,13 +5,13 @@ module YelpHelper
       restaurants << Restaurant.new(restaurant)
     end
     restaurant_results = get_restaurant_results(restaurants.first)
-    {text: restaurant_results.join("\n")}
+    {text: restaurant_results}
   end
 
   def get_restaurant_results(restaurants)
     restaurants.map do |restaurant|
       "* #{restaurant.name} - #{restaurant.rating} Rating - #{restaurant.address.join(" ")}"
-    end.shuffle.shift(10)
+    end.shuffle.shift(10).join("\n")
   end
 
 end
