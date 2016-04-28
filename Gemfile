@@ -30,7 +30,6 @@ gem 'yelp', require: 'yelp'
 gem 'database_cleaner'
 gem 'faker'
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'web-console', '~> 2.0'
 
 
 group :development, :test do
@@ -41,6 +40,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do
