@@ -1,11 +1,11 @@
 class Api::V1::RestaurantRecommendationsController < Api::V1::BaseController
   include YelpHelper
-  
+
   def index
     user_preferences = get_user_preferences(params)
-    @restaurants = service.get_restaurant_recommendations(user_preferences)
-    restaurant_names = get_restaurant_names(@restaurants.businesses)
-    render json: restaurant_names
+    restaurants = service.get_restaurant_recommendations(user_preferences)
+    restaurant_info = get_restaurant_info(restaurants.businesses)
+    render json: restaurant_info
   end
 
   private
