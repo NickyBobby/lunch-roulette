@@ -8,7 +8,8 @@ class Restaurant
   end
 
   def self.get_recommendations(preferences)
-    Restaurant.service.get_restaurant_recommendations(preferences).businesses
+    restaurants = Restaurant.service.get_restaurant_recommendations(preferences).businesses
+    Restaurant.get_restaurant_info(restaurants)
   end
 
   def self.get_restaurant_info(restaurant_params)
