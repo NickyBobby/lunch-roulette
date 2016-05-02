@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :lunch_roulette_groups, only: [:index]
       post '/restaurant_recommendations', to: 'restaurant_recommendations#index'
-      post   'food_preferences',          to: 'food_preferences#update'
+      post '/food_preferences',           to: 'food_preferences#update'
     end
   end
 
