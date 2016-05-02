@@ -3,8 +3,7 @@ class LunchRouletteGroup
   def self.generate_lunch_roulette_groups
     staff = SlackUser.is_admin.to_a
     students = SlackUser.is_student.to_a
-    total_count = staff.count + students.count
-    groups_size = (total_count/4.0).ceil
+    groups_size = ((staff.count + students.count)/4.0).ceil
     groups = []
     groups_size.times do
       if staff.count > 0
@@ -22,18 +21,14 @@ class LunchRouletteGroup
   end
 
   def self.get_name_groups(groups)
-    collection = []
-    groups.each do |group|
-      collection << "* " + LunchRouletteGroup.get_names(group).join(", ") + "\n"
+    groups.map do |group|
+      "* " + LunchRouletteGroup.get_names(group).join(", ") + "\n"
     end
-    collection
   end
 
   def self.get_names(group)
-    lr_group = []
-    group.each do |user|
-      lr_group << user.name
+    group.map do |user|
+      user.name
     end
-    lr_group
   end
 end

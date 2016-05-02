@@ -5,9 +5,10 @@ RSpec.describe Api::V1::FoodPreferencesController, type: :controller do
     user = SlackUser.create(name: "Nick",
                      slack_id: "BHGS98HKN")
 
-    post :update, {user_id: "BHGS98HKN", text: "#add stuff"}
+    post :update, {user_id: "BHGS98HKN", text: "#add stuff"}, format: :json
 
-    expect(response.status).to eq 200
+    # expect(response.status).to eq 200
+    expect(response).to have_http_status(:success)
     expect(response.body).to have_content "stuff was added to your food preferences"
   end
 
@@ -16,9 +17,10 @@ RSpec.describe Api::V1::FoodPreferencesController, type: :controller do
                      slack_id: "BHGS98HKN",
                      food_preferences: {"stuff" => true})
 
-    post :update, {user_id: "BHGS98HKN", text: "#delete stuff"}
+    post :update, {user_id: "BHGS98HKN", text: "#delete stuff"}, format: :json
 
-    expect(response.status).to eq 200
+    # expect(response.status).to eq 200
+    expect(response).to have_http_status(:success)
     expect(response.body).to have_content "stuff was deleted from your food preferences"
   end
 
@@ -27,9 +29,10 @@ RSpec.describe Api::V1::FoodPreferencesController, type: :controller do
                      slack_id: "BHGS98HKN",
                      food_preferences: {"stuff" => true, "things" => true})
 
-    post :update, {user_id: "BHGS98HKN", text: "#list"}
+    post :update, {user_id: "BHGS98HKN", text: "#list"}, format: :json
 
-    expect(response.status).to eq 200
+    # expect(response.status).to eq 200
+    expect(response).to have_http_status(:success)
     expect(response.body).to have_content "Your food preferences are stuff and things"
   end
 
@@ -38,9 +41,10 @@ RSpec.describe Api::V1::FoodPreferencesController, type: :controller do
                      slack_id: "BHGS98HKN",
                      food_preferences: {"stuff" => true, "things" => true})
 
-    post :update, {user_id: "BHGS98HKN", text: ""}
+    post :update, {user_id: "BHGS98HKN", text: ""}, format: :json
 
-    expect(response.status).to eq 200
+    # expect(response.status).to eq 200
+    expect(response).to have_http_status(:success)
     expect(response.body).to have_content "Possible commands when using the /food-prefs slash command"
   end
 end

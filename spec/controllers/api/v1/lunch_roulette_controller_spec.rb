@@ -9,12 +9,12 @@ RSpec.describe Api::V1::LunchRouletteGroupsController, type: :controller do
       SlackUser.create(name: "Student #{n}", admin: false)
     end
 
-    get :index , {default: :json}
+    get :index, format: :json
 
-    expect(response.status).to eq 200
+    expect(response).to have_http_status(:success)
   end
 
-  it "returns list of lunch roulette groups / hits different conditionald" do
+  it "returns list of lunch roulette groups / hits different conditional" do
     10.times do |n|
       SlackUser.create(name: "Teacher #{n}", admin: true)
     end
@@ -22,8 +22,8 @@ RSpec.describe Api::V1::LunchRouletteGroupsController, type: :controller do
       SlackUser.create(name: "Student #{n}", admin: false)
     end
 
-    get :index , {default: :json}
+    get :index, format: :json
 
-    expect(response.status).to eq 200
+    expect(response).to have_http_status(:success)
   end
 end
