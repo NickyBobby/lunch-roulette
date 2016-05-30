@@ -9,7 +9,7 @@ Lunch Roulette is a Slack App with slash commands that allow users to generate r
 
 To generate random groups of 4, you simply type in `/lunch-roulette` and the groups will appear.
 
-![food-preferences](http://g.recordit.co/cDTpnpgZMD.gif)
+![food-preferences](http://recordit.co/cDTpnpgZMD)
 
 There are 3 slash commands for individual food preferences
 
