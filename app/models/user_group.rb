@@ -19,7 +19,9 @@ class UserGroup < ActiveRecord::Base
   def self.find_or_create_slack_users(user_group, user=nil)
     slack_service = UserGroup.service(user)
     slack_users = slack_service.get_slack_users(user_group)
-    UserGroup.create_slack_users(slack_users, user, user_group) if slack_users[:users].count != user_group.slack_users.count
+    if slack_users[:users].count != user_group.slack_users.count
+      UserGroup.create_slack_users(slack_users, user, user_group)
+    end
   end
 
   private
